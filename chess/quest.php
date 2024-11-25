@@ -177,14 +177,20 @@ $achievements = [
                 <a href="tournaments.php" <?php echo $current_page === 'tournaments' ? 'class="active"' : ''; ?>>
                     <i class="fas fa-trophy"></i> Турниры
                 </a>
+                <a href="my_tournaments.php" <?php echo $current_page === 'my_tournaments' ? 'class = "active"' : ''; ?>">
+                     <i class="fas fa-chess"></i> Мои турниры
+                </a>
                 <a href="players.php" <?php echo $current_page === 'players' ? 'class="active"' : ''; ?>>
                     <i class="fas fa-users"></i> Игроки
                 </a>
                 <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="training.php" <?php echo $current_page === 'training' ? 'class="active"' : ''; ?>>
+                    <i class="fas fa-graduation-cap"></i> Обучение
+                </a>
                     <a href="dashboard.php" <?php echo $current_page === 'dashboard' ? 'class="active"' : ''; ?>>
                         <i class="fas fa-chess-board"></i> Личный кабинет
                     </a>
-                    <a href="logout.php" class="nav-link">
+                    <a href="logout.php" class="nav-menu-right">
                         <i class="fas fa-sign-out-alt"></i> Выход
                     </a>
                 <?php else: ?>

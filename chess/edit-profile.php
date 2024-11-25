@@ -86,19 +86,31 @@ $current_page = 'dashboard';
                 <a href="tournaments.php" <?php echo $current_page === 'tournaments' ? 'class="active"' : ''; ?>>
                     <i class="fas fa-trophy"></i> Турниры
                 </a>
+                <a href="my_tournaments.php" <?php echo $current_page === 'my_tournaments' ? 'class = "active"' : ''; ?>">
+                     <i class="fas fa-chess"></i> Мои турниры
+                </a>
                 <a href="players.php" <?php echo $current_page === 'players' ? 'class="active"' : ''; ?>>
                     <i class="fas fa-users"></i> Игроки
                 </a>
+                <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="training.php" <?php echo $current_page === 'training' ? 'class="active"' : ''; ?>>
                     <i class="fas fa-graduation-cap"></i> Обучение
                 </a>
-                <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="dashboard.php" <?php echo $current_page === 'dashboard' ? 'class="active"' : ''; ?>>
                         <i class="fas fa-chess-board"></i> Личный кабинет
                     </a>
                     <a href="logout.php" class="nav-menu-right">
                         <i class="fas fa-sign-out-alt"></i> Выход
                     </a>
+                <?php else: ?>
+                    <div class="nav-menu-right">
+                        <a href="login.php" <?php echo $current_page === 'login' ? 'class="active"' : ''; ?>>
+                            <i class="fas fa-sign-in-alt"></i> Вход
+                        </a>
+                        <a href="register.php" <?php echo $current_page === 'register' ? 'class="active"' : ''; ?>>
+                            <i class="fas fa-user-plus"></i> Регистрация
+                        </a>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
